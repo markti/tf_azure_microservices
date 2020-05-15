@@ -33,7 +33,7 @@ module "api_fn" {
 
 module "api_eventgrid_topic" {
   
-  source                        = "github.com/markti/tf_azure_eventgrid/topic"
+  source                        = "github.com/markti/tf_azure_eventgrid/topic/base"
   
   app_name                      = var.app_name
   env_name                      = var.env_name
