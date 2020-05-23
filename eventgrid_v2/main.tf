@@ -43,5 +43,6 @@ module "api_eventgrid_topic" {
   location                      = var.location
   secret_prefix                 = "EventGrid-${var.service_name}"
   keyvault_id                   = var.keyvault_id
+  loganalytics_workspace_id     = var.loganalytics_workspace_id
 
 }
