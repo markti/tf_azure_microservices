@@ -1,4 +1,4 @@
-
+data "azurerm_client_config" "current" {}
 
 module "keyvault" {
   
@@ -20,6 +20,6 @@ module "terraform_admin" {
   source                = "github.com/markti/tf_azure_keyvault/policy/machine/admin"
 
   keyvault_id           = module.keyvault.id
-  application_id        = var.terraform_application_id
+  application_id        = data.azurerm_client_config.current.client_id
 
 }
