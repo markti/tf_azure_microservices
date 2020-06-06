@@ -12,9 +12,9 @@ variable "host_settings" {
     storage_connection_string = string
     instrumentation_key = string
     keyvault_id = string
-    code_storage_account_name = string
-    code_storage_container = string
-    code_storage_sas = string
+    deployment_storage_account_name = string
+    deployment_storage_container = string
+    deployment_storage_sas = string
 
   })
 }
