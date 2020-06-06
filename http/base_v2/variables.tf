@@ -14,7 +14,7 @@ variable "host_settings" {
     keyvault_id = string
     code_storage_account_name = string
     code_storage_container = string
-    code_package_sas = string
+    code_storage_sas = string
 
   })
 }
