@@ -24,7 +24,8 @@ output "code_storage_sas" {
 }
 
 output "host_settings" {
-  value = object({
+  value = {
+    
     hosting_plan_id           = module.api_hosting_plan.id
     storage_connection_string = module.api_hosting_plan.storage_connection_string
     instrumentation_key       = module.appinsights.instrumentation_key
@@ -34,5 +35,5 @@ output "host_settings" {
     code_storage_container    = azurerm_storage_container.code_storage.name
     code_storage_sas          = data.azurerm_storage_account_sas.code_storage.sas
 
-  })
+  }
 }
