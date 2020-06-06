@@ -32,7 +32,7 @@ output "host_settings" {
     keyvault_id               = module.keyvault.id
     deployment_storage_account_name = module.code_storage.name
     deployment_storage_container    = azurerm_storage_container.code_storage.name
-    deployment_storage_sas          = data.azurerm_storage_account_sas.code_storage.sas
+    deployment_package_sas          = data.azurerm_storage_account_sas.code_storage.sas
 
   }
 }
