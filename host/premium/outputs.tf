@@ -25,8 +25,8 @@ output "code_storage_sas" {
 
 output "host_settings" {
   value = {
-    
-    hosting_plan_id           = module.api_hosting_plan.id
+
+    plan_id                   = module.api_hosting_plan.id
     storage_connection_string = module.api_hosting_plan.storage_connection_string
     instrumentation_key       = module.appinsights.instrumentation_key
     keyvault_id               = module.keyvault.id
