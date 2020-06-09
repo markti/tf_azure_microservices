@@ -1,8 +1,15 @@
-variable "resource_group_name" { }
-variable "location" { }
-variable "app_name" { }
-variable "env_name" { }
-variable "location_suffix" { }
+variable "environment" {
+  type = object({
+
+    app_name = string
+    env_name = string
+    resource_group_name = string
+    location = string
+    location_suffix = string
+
+  })
+}
+variable "name" { }
 variable "storage_type" { 
     default = "GRS" 
 }
