@@ -17,3 +17,4 @@ variable "deployment_storage_account_name" { }
 variable "deployment_storage_container" { }
 variable "deployment_package_sas" { }
 variable "deployment_package_filename" { }
+variable "loganalytics_workspace_id" { }

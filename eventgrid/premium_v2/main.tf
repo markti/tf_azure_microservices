@@ -15,7 +15,7 @@ locals {
 
 module "api_fn" {
   
-  source                        = "github.com/markti/tf_azure_fn/http/premium"
+  source                        = "github.com/markti/tf_azure_fn/eventgrid/premium"
   
   app_name                      = var.app_name
   env_name                      = var.env_name
@@ -28,5 +28,21 @@ module "api_fn" {
   azure_function_version        = var.azure_function_version
   worker_runtime                = var.worker_runtime
   app_settings                  = local.combined_settings
+
+}
+
+module "api_eventgrid_topic" {
+  
+  source                        = "github.com/markti/tf_azure_eventgrid/topic/secure_v2"
+  
+  app_name                      = var.app_name
+  env_name                      = var.env_name
+
+  name                          = var.name
+  resource_group_name           = var.resource_group_name
+  location                      = var.location
+  secret_prefix                 = "EventGrid-${var.service_name}"
+  keyvault_id                   = var.keyvault_id
+  loganalytics_workspace_id     = var.loganalytics_workspace_id
 
 }

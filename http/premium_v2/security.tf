@@ -13,7 +13,7 @@ module "keyvault_access" {
   
   source                = "github.com/markti/tf_azure_keyvault/policy/machine/reader"
 
-  keyvault_id           = var.keyvault_id
+  keyvault_id           = var.host_settings.keyvault_id
   application_id        = module.service_principal.client_id
 
 }
