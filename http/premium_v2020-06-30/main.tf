@@ -6,8 +6,8 @@ locals {
   required_settings = {
       "APPINSIGHTS_INSTRUMENTATIONKEY"    = var.host_settings.instrumentation_key,
       "WEBSITE_RUN_FROM_PACKAGE"          = local.code_drop_url,
-      "ClientID"                          = module.service_principal.client_id,
-      "ClientSecret"                      = module.service_principal.client_secret
+      "ClientID"                          = var.fn_settings.client_id,
+      "ClientSecret"                      = var.fn_settings.client_secret
   }
   combined_settings = merge(local.required_settings, var.app_settings)
 }
