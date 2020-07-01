@@ -28,7 +28,7 @@ variable "fn_settings" {
     name              = string
     service_name      = string
     runtime_version   = string
-    worker_runtime    = string
+    runtime_type      = string
     app_settings      = string
     package_filename  = string
     workspace_id      = string

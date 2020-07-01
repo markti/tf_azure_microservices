@@ -25,8 +25,8 @@ module "api_fn" {
   location                      = var.environment.location
   app_service_plan_id           = var.host_settings.plan_id
   storage_connection_string     = var.host_settings.storage_connection_string
-  azure_function_version        = var.fn_settings.azure_function_version
-  worker_runtime                = var.fn_settings.worker_runtime
+  azure_function_version        = var.fn_settings.runtime_version
+  worker_runtime                = var.fn_settings.runtime_type
   app_settings                  = local.combined_settings
 
 }

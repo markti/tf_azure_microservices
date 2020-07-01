@@ -11,5 +11,5 @@ resource "azurerm_storage_blob" "deployment_blob" {
   storage_account_name    = var.host_settings.deployment_storage_account_name
   storage_container_name  = var.host_settings.deployment_storage_container
   type                    = "Block"
-  source                  = var.fn_settings.deployment_package_filename
+  source                  = var.fn_settings.package_filename
 }
