@@ -9,7 +9,7 @@ locals {
       "ClientID"                          = var.fn_settings.client_id,
       "ClientSecret"                      = var.fn_settings.client_secret
   }
-  combined_settings = merge(local.required_settings, var.app_settings)
+  combined_settings = merge(local.required_settings, var.fn_settings.app_settings)
 }
 
 
