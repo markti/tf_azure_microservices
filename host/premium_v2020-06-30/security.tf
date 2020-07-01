@@ -10,7 +10,7 @@ module "keyvault" {
   name                      = "${var.environment.app_name}-${var.environment.env_name}-${var.environment.location_suffix}"
   resource_group_name       = var.environment.resource_group_name
   location                  = var.environment.location
-  loganalytics_workspace_id = var.loganalytics_workspace_id
+  loganalytics_workspace_id = var.workspace_id
 
 }
 
