@@ -10,6 +10,18 @@ locals {
       "ClientSecret"                      = var.fn_settings.client_secret
   }
   combined_settings = merge(local.required_settings, var.fn_settings.app_settings)
+
+  merged_fn_settings = {
+    name              = var.fn_settings.name
+    service_name      = var.fn_settings.service_name
+    runtime_version   = var.fn_settings.runtime_version
+    runtime_type      = var.fn_settings.runtime_type
+    app_settings      = local.combined_settings
+    package_filename  = var.fn_settings.package_filename
+    workspace_id      = var.fn_settings.workspace_id
+    client_id         = var.fn_settings.client_id
+    client_secret     = var.fn_settings.client_secret
+  }
 }
 
 
@@ -17,16 +29,8 @@ module "api_fn" {
   
   source                        = "github.com/markti/tf_azure_fn/http/premium"
   
-  app_name                      = var.environment.app_name
-  env_name                      = var.environment.env_name
-
-  name                          = var.fn_settings.name
-  resource_group_name           = var.environment.resource_group_name
-  location                      = var.environment.location
-  app_service_plan_id           = var.host_settings.plan_id
-  storage_connection_string     = var.host_settings.storage_connection_string
-  azure_function_version        = var.fn_settings.runtime_version
-  worker_runtime                = var.fn_settings.runtime_type
-  app_settings                  = local.combined_settings
+  environment = var.environment
+  host_settings = var.host_settings
+  fn_settings = local.merged_fn_settings
 
 }
