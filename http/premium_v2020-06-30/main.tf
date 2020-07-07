@@ -27,7 +27,7 @@ locals {
 
 module "api_fn" {
   
-  source                        = "github.com/markti/tf_azure_fn/http/premium"
+  source                        = "github.com/markti/tf_azure_fn/http/premium_v2020-06-30"
   
   environment = var.environment
   host_settings = var.host_settings
