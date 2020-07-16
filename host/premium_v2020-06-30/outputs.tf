@@ -1,3 +1,6 @@
+output "keyvault_uri" {
+  value = module.keyvault.uri
+}
 
 output "host_settings" {
   value = {
